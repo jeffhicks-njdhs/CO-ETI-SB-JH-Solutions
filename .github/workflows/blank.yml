@@ -6,15 +6,34 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+      branches:
+      - 'main'
+      - '!config/**'
+
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  email:
+    runs-on: windows-latest
+    steps:
+      - name: Azure PowerShell Action
+      - uses: Azure/powershell@v2
+        with:
+          # Specify the Az PowerShell script here.
+          inlineScript: "Hello" 
+          # Azure PS version to be used to execute the script, example: 1.8.0, 2.8.0, 3.4.0. To use the latest version, specify "latest".
+          azPSVersion: "latest"
+          # Select the value of the ErrorActionPreference variable for executing the script. Options: stop, continue, silentlyContinue. Default is Stop.
+          errorActionPreference: Stop
+          # If this is true, this task will fail if any errors are written to the error pipeline, or if any data is written to the Standard Error stream.
+          failOnStandardError: false
+          # Used to pull Az module from Azure/az-ps-module-versions.  Since there's a default, this is typically not supplied by the user.
+          githubToken: ${{ github.token }}
+          
+
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
