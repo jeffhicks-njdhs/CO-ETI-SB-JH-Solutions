@@ -27,28 +27,15 @@
   # Get the access token
   $token = (Invoke-RestMethod @request).access_token
 
-  $fromAddress = 'Mark.Metz@dhs.nj.gov'
+  $fromAddress = 'Jeff.Hicks@dhs.nj.gov'
 
   $toAddress =  @(
-    @{"emailAddress" = @{"address" = 'Mark.Metz@dhs.nj.gov'}}
-  )
- 
-  $ccAddress =  @(
-    @{"emailAddress" = @{"address" = 'luke.skywalker@dhs.nj.gov'}},
-    @{"emailAddress" = @{"address" = 'Aniceto.Bautista@dhs.nj.gov'}}
-  )
-  $bccAddress =  @(
     @{"emailAddress" = @{"address" = 'Jeff.Hicks@dhs.nj.gov'}}
   )
 
-  $mailSubject = "Hard phone requests for Teams Voice users: " + $needsPhone.Count + " request" 
-  if($needsPhone.Count -ne 1){$mailSubject += "s"}
-
-  $mailMessage =  "<i>TO: TBD</i></br></br><h3>Hard phones requested for the following users:</h3>"
-  $mailMessage += "<table border='1' cellspacing='0' cellpadding='5'>" + $htmlBodyMessage + "</table>"
-
+  $mailSubject = "Test from GitHub" 
+  $mailMessage = "Message body..."
   Write-Host "Sending email for Needs Hard Phone action..."
-
 
   # Build the Microsoft Graph API request
   $params = @{
@@ -66,8 +53,6 @@
           "content"     = $mailMessage
         }
         "toRecipients" = $toAddress
-        "ccRecipients" = $ccAddress
-        "bccRecipients" = $bccAddress
       }
     }) | ConvertTo-JSON -Depth 10
   }
