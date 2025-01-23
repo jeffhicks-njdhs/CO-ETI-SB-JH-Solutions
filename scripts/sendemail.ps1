@@ -37,6 +37,15 @@ param
     @{"emailAddress" = @{"address" = 'Jeff.Hicks@dhs.nj.gov'}}
   )
 
+<#
+  $ccAddress =  @(
+    @{"emailAddress" = @{"address" = 'luke.skywalker@dhs.nj.gov'}},
+    @{"emailAddress" = @{"address" = 'Aniceto.Bautista@dhs.nj.gov'}}
+  )
+  $bccAddress =  @(
+    @{"emailAddress" = @{"address" = 'Jeff.Hicks@dhs.nj.gov'}}
+  )
+#>
   $mailSubject = "Test from GitHub" 
   $mailMessage = "Message body..."
   Write-Host "Sending email for Needs Hard Phone action..."
@@ -57,6 +66,8 @@ param
           "content"     = $mailMessage
         }
         "toRecipients" = $toAddress
+        # "ccRecipients" = $ccAddress
+        # "bccRecipients" = $bccAddress
       }
     }) | ConvertTo-JSON -Depth 10
   }
