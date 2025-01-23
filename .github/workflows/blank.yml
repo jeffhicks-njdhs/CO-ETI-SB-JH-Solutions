@@ -19,6 +19,6 @@ jobs:
       - name: Build
         shell: pwsh
         run: | 
-          .\sendemail.ps1
+          sendemail.ps1
         
       
