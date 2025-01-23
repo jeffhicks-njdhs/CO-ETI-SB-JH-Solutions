@@ -19,6 +19,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Build
+        shell: pwsh
         run: | 
           .\sendmail.ps1
         
