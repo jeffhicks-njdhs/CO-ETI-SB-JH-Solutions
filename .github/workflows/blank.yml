@@ -11,18 +11,13 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-defaults:
-  run:
-    shell: pwsh
-    working-directory: scripts
     
 jobs:
   email:
     runs-on: windows-latest
     steps:
       - name: Build
+        shell: pwsh
         run: | 
           .\sendemail.ps1
         
