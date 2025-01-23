@@ -16,11 +16,7 @@ param
     [string] $appId,
     [string] $appPassword
 )
-
-### Search Azure App Registrations for "DoAS-GitHub-Actions"
-    ## $tenantId = "5711ee8f-5e83-4145-be03-c551134f4160"
-    ## $appId = "cf7d3ab5-390f-42ae-bddb-ca742dedb54b"
-    ## $appPassword = "caE8Q~XRkKG753f9_UUAMQLQ4d5gE4QRytHgKdmU"
+### Parameters are for Azure App Registrations called "DoAS-GitHub-Actions"
   
   $request = @{
           Method = 'POST'
