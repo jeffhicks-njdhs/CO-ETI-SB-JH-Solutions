@@ -18,9 +18,9 @@ jobs:
       - name: Azure PowerShell Action
         uses: Azure/powershell@v2
         env:
-          tenantID: ${{secrets.TEST_USERNAME }}
-          clientID: ${{secrets.TEST_USERNAME }}
-          clientSecret: ${{secrets.TEST_USERNAME }}
+          tenantID: ${{secrets.AZURE_TENANT_ID }}
+          clientID: ${{secrets.AZURE_CLIENT_ID }}
+          clientSecret: ${{secrets.AZURE_CLIENT_SECRET }}
         with:
           # Specify the Az PowerShell script here.
           inlineScript: .\scripts\sendemail.ps1 "$Env:tenantID" "$Env:clientID" "$Env:clientSecret" 
