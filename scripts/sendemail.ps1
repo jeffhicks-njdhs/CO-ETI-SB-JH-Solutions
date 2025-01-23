@@ -34,18 +34,20 @@ param
   $fromAddress = 'Jeff.Hicks@dhs.nj.gov'
 
   $toAddress =  @(
+    @{"emailAddress" = @{"address" = 'Praveen.Raj@dhs.nj.gov'}}
+  )
+
+  $ccAddress =  @(
+    @{"emailAddress" = @{"address" = 'heri.sahrun@dhs.nj.gov'}},
     @{"emailAddress" = @{"address" = 'Jeff.Hicks@dhs.nj.gov'}}
   )
 
-<# UNCOMMENT TO USE cc AND bcc 
-  $ccAddress =  @(
-    @{"emailAddress" = @{"address" = 'luke.skywalker@dhs.nj.gov'}},
-    @{"emailAddress" = @{"address" = 'Aniceto.Bautista@dhs.nj.gov'}}
-  )
+<# UNCOMMENT TO USE bcc 
   $bccAddress =  @(
     @{"emailAddress" = @{"address" = 'Jeff.Hicks@dhs.nj.gov'}}
   )
 #>
+
   $mailSubject = "Test from GitHub" 
   $mailMessage = "Message body..."
   Write-Host "Sending email for Needs Hard Phone action..."
@@ -66,7 +68,7 @@ param
           "content"     = $mailMessage
         }
         "toRecipients" = $toAddress
-        # "ccRecipients" = $ccAddress
+        "ccRecipients" = $ccAddress
         # "bccRecipients" = $bccAddress
       }
     }) | ConvertTo-JSON -Depth 10
