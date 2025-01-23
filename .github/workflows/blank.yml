@@ -24,6 +24,6 @@ jobs:
     steps:
       - name: Build
         run: | 
-          .\sendmail.ps1
+          .\sendemail.ps1
         
       
