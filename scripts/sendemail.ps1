@@ -37,7 +37,7 @@ param
     @{"emailAddress" = @{"address" = 'Jeff.Hicks@dhs.nj.gov'}}
   )
 
-<#
+<# UNCOMMENT TO USE cc AND bcc 
   $ccAddress =  @(
     @{"emailAddress" = @{"address" = 'luke.skywalker@dhs.nj.gov'}},
     @{"emailAddress" = @{"address" = 'Aniceto.Bautista@dhs.nj.gov'}}
