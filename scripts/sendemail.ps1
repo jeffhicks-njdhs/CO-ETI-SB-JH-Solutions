@@ -9,10 +9,10 @@
 #   Access Token for API call                                                    |
 # _______________________________________________________________________________|
 
-### Search Azure App Registrations for "CO-OIS-ETI-TeamsAdministration"
+### Search Azure App Registrations for "DoAS-GitHub-Actions"
     $tenantId = "5711ee8f-5e83-4145-be03-c551134f4160"
-    $appId = "fe8f87fa-8fb6-4ead-8879-7db721e0c6f5"
-    $appPassword = ".z28Q~LUV2t_cEkjh630OQARKihX22O9yeBxkc49"
+    $appId = "cf7d3ab5-390f-42ae-bddb-ca742dedb54b"
+    $appPassword = "caE8Q~XRkKG753f9_UUAMQLQ4d5gE4QRytHgKdmU"
   
   $request = @{
           Method = 'POST'
