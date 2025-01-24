@@ -10,7 +10,7 @@ on:
     
 jobs:
   email:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Check Out
         uses: actions/checkout@v3
